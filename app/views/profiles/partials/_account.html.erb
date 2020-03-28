@@ -1,0 +1,14 @@
+
+<fieldset>
+    <legend><h2>Mon compte</h2></legend>
+
+    <!-- <h5><%= t('.cancel_my_account') %></h5> -->
+    <div class="row">
+
+        <p>
+        <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: "btn btn-danger btn-block" %>
+        </p>
+    </div>
+
+
+</fieldset>

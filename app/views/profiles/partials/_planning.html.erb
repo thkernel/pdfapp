@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col" >Jour</th>
+            <th scope="col">Heure début</th>
+            <th scope="col">Heure fin</th>
+            <th scope="col">Action</th>
+
+            
+        </tr>
+    </thead>
+    <tbody class="plannings">
+        <% structure_plannings(@provider.profile.id, structure_id).each do |planning| %>
+            <tr>
+            <td><%= planning.day %></td>
+            <td><%= planning.start_time.strftime("%H:%M") %></td>
+            <td><%= planning.end_time.strftime("%H:%M") %></td>
+            <td>
+                <%= link_to raw('<i class="fa fa-calendar" aria-hidden="true"></i> Rendez-vous'), new_appointment_path(planning_item: planning.id, structure_id: structure_id), class: "btn btn-primary", title: "L'envoyer un message", remote: true %>
+            </td>
+
+                
+            </tr>
+        <% end %>
+    </tbody>
+</table>

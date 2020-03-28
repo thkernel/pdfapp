@@ -1,0 +1,19 @@
+<% @posts.each do |post| %>
+    <tr>
+    <td><%= post.title %></td>
+    <td><%= post_category(post.post_category_id).name %></td>
+    <td><%= post.content.truncate_words(10, omission: '...').html_safe %></td>
+    <td>
+			<div class="action-buttons">
+				<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'), edit_post_path(post.slug), title: "Modifier", remote: false %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), post_delete_path(post.slug), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+    </tr>
+<% end %>

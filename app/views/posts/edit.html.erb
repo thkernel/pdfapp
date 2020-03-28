@@ -1,0 +1,29 @@
+
+<div class="container main-container">
+<div class="br-pageheader">
+      <nav class="breadcrumb pd-0 mg-0 tx-12">
+        
+        <span class="breadcrumb-item active"><h3>Modification de  l'article</h3></span>
+      </nav>
+    </div><!-- br-pageheader -->
+<div class="br-pagebody">
+  <div class="br-section-wrapper">
+    <div class="headers mg-b-5">
+      <div class="left-content">
+        </div>
+
+      <div class="text-right">
+            <%= link_to raw('<i class="fa fa-plus" aria-hidden="true"></i> Nouvel article'), new_post_path, class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", remote: false %>
+
+        </div>
+    </div>
+    <div class="section-body">
+<%= render 'form', post: @post %>
+    </div>
+
+
+
+
+</div>
+</div>
+</div>

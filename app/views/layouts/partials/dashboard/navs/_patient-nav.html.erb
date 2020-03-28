@@ -1,0 +1,71 @@
+<!-- ########## START: LEFT PANEL ########## -->
+
+      <ul class="br-sideleft-menu">
+       <li class="br-menu-item">
+          <%= link_to  raw('<i class="fa fa-home tx-20"></i> <span class="menu-item-label">Tableau de bord</span>'), dashboard_path, class: "br-menu-link active" %>
+        </li><!-- br-menu-item -->
+
+       
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-calendar tx-20"></i>
+            <span class="menu-item-label">Rendez-vous</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub">
+            
+          
+            <li class="sub-item">
+                <%= link_to  "Mes rendez-vous", appointments_path, class: "sub-link" %>
+            
+
+          </ul>
+        </li>
+       
+        
+
+        <li class="br-menu-item">
+            <a href="#" class="br-menu-link with-sub">
+              <i class="fa fa-shopping-cart tx-20"></i>
+              <span class="menu-item-label">Mes commandes</span>
+            </a><!-- br-menu-link -->
+            <ul class="br-menu-sub">
+              
+            
+              <li class="sub-item">
+                  <%= link_to  "Médicaments", medicament_orders_path, class: "sub-link" %>
+              </li>
+              
+
+            </ul>
+          </li>
+        
+
+        
+
+        
+        <li class="br-menu-item">
+            <a href="#" class="br-menu-link with-sub">
+              <i class="fa fa-stethoscope tx-20"></i>
+              <span class="menu-item-label">Consultations</span>
+            </a><!-- br-menu-link -->
+            <ul class="br-menu-sub">
+              
+            
+              <li class="sub-item">
+                  <%= link_to  "Consultations en ligne", advices_path, class: "sub-link" %>
+              </li>
+              
+
+            </ul>
+          </li>
+
+
+        
+      </ul><!-- br-sideleft-menu -->
+
+      
+       
+        
+      </div><!-- info-list -->
+
+    <!-- ########## END: LEFT PANEL ########## -->

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @post_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @post_type.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @post_type.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @post_type.user %>
+</p>
+
+<%= link_to 'Edit', edit_post_type_path(@post_type) %> |
+<%= link_to 'Back', post_types_path %>

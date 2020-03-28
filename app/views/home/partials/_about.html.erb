@@ -1,0 +1,30 @@
+<section class="about">
+    <div class="container">
+        <div class="row">
+
+        <div class="row align-items-lg-center">
+			<div class="col-lg-6  text-right ">
+            <div class="contact-img">
+				    <%= post_thumbnail(@about)  %>
+                    </div>
+
+			</div>
+			<div class="col-lg-6 img-fluid d-lg-block">
+                    
+                <h1 class="text-bold">
+                    <%= @about.title %>
+				</h1>
+				<p class="text-gray-soft text-regular">
+                    <%= @about.content.truncate_words(70, omission: '...').html_safe %><br />
+                    <%= link_to "Lire plus...", show_blog_post_path(@about.id) , class: "btn btn-primary" %>
+                </p>
+                
+
+			</div>
+		</div>
+
+
+            
+        </div>
+    </div>
+</div>

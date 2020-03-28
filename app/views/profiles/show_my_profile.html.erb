@@ -1,0 +1,94 @@
+<div class="container profile-wrapper">
+
+	<!-- Profile header -->
+		<div class="row">
+			<div class="profile-header">
+
+				<div class="profile-cover-hold">
+					<!-- Profile cover -->
+					<div class="profile-cover profile-cover-gradient">
+
+					</div>
+
+					<!-- Profile avatar holder -->
+					<div class="profile-avatar-hold">
+						<div class="row">
+							<div class="col-md-6">
+								<!-- Profile avatar left -->
+								<div class="profile-avatar-left">
+									<div class="profile-avatar">
+									     <%= user_avatar(current_user, "Avatar", "img-fluid rounded-circle")%>
+
+									</div>
+
+									<!-- Profile meta -->
+									<div class="profile-meta">
+										<div class="profile-username">
+											<%= "#{@user.login} " %>
+										</div>
+										<div class="profile-user-location">
+										</div>
+
+										<div class="profile-user-online">
+											en ligne
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<!-- Profile avatar right -->
+								<div class="profile-avatar-right">
+									<div class="prof-counters-holder">
+                                        <div class="prof-counter-item">
+                                			<div class="prof-counter-item-numbers prof-counter-visit">
+												<span>
+                                    				<%= image_tag("icons/visitors_ic.svg") %>  
+												</span>  
+												<span>
+													7480
+												</span>                  
+											</div>
+											<div class="prof-counter-item-subtext">
+												Visiteurs                                </div>
+											</div>
+											<div class="prof-counter-item">
+												<div class="prof-counter-item-numbers prof-counter-liked">
+													<span>
+                                    				<%= image_tag("icons/liked_me_ic.svg") %>  
+												</span>  
+												<span>
+													7480
+												</span>                           
+													</div>
+												<div class="prof-counter-item-subtext">
+													m’ont aimé
+												</div>
+											</div>
+											<div class="prof-counter-item">
+												<div class="prof-counter-item-numbers  prof-counter-i-liked">
+													<span>
+                                    				<%= image_tag("icons/i_like_ic.svg") %>  
+												</span>  
+												<span>
+													7480
+												</span>                          
+													 </div>
+												<div class="prof-counter-item-subtext">
+													J’aime                                
+												</div>
+											</div>
+                                        </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	<!-- end profile header -->
+	
+
+</div>

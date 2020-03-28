@@ -1,0 +1,36 @@
+<div class="container main-container">
+<h1>Documents</h1>
+
+   <div class="row">
+
+<% @posts.each do |post| %>
+        <div class="col-md-4">
+
+        <div class="card">
+            <div class="thumbnails">
+                <%= link_to  show_post_path(post.slug) do  %>
+                    <div class="card-img-top">
+                        <%= post_thumbnail(post) %>
+                        </div>
+                <% end %>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%= link_to post.title, show_post_path(post.slug) %>
+                </h5>
+                <div class="post-category">
+                   <!-- <%= post_category(post.post_category_id).name %> -->
+
+                </div>
+                
+                
+                <%= link_to "Lire plus...", show_post_path(post.slug), class: "btn btn-primary" %>
+            </div>
+            </div>
+
+        </div>
+    
+<% end %>
+</div>
+</div>
+

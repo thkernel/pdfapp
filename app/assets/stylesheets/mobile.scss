@@ -1,0 +1,11 @@
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+    .hero {
+        min-height: calc(40vh) !important;
+    }
+  }
+  @media screen and (max-width: 970px) {
+    .hero {
+        min-height: calc(40vh) !important;
+    }
+  }

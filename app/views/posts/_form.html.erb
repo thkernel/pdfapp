@@ -1,0 +1,44 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title, "Titre", class: "required" %>
+    <%= form.text_field :title, class: "form-control", required: true, placeholder: "Titre" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :post_category, "Catégorie" %>
+    <%= form.collection_select :post_category_id , @post_categories, :id, :name, {prompt: "Sélectionner"}, class: "form-control",style: "width: 100%", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :content, "Contenu" %>
+    <%= form.cktext_area :content, class: "form-control", rows: 25 %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :thumbnail, "Image à la une" %>
+    <%= form.file_field :thumbnail %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :file, "Fichier", class: "required" %>
+    <%= form.file_field :file %>
+  </div>
+
+ 
+
+  <div class="form-group text-right">
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>

@@ -1,0 +1,71 @@
+    <fieldset>
+        <legend><h2>Mon profil</h2></legend>
+
+        <%= form_with(model: profile, local: true) do |form| %>
+          <!-- <h5><%= t('.edit_my_profile') %></h5> -->
+
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= form.label :first_name, "Prénom" %>
+                        <%= form.text_field :first_name, class: "form-control",  placeholder: "Prénom" %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= form.label :last_name, "Nom" %>
+                        <%= form.text_field :last_name, class: "form-control",  placeholder: "Prénom" %>
+                    </div>
+
+                    <% unless is_patient?(current_user) %>
+                        <div class="form-group">
+                            <%= form.label :speciality, "Spécialité" %>
+                            <%= form.collection_select :speciality, @specialities, :name, :name, {prompt: "Sélectionner"}, class: "form-control" , style: "width: 100%" %> 
+
+                        </div>
+                    <% end %>
+
+                  
+                   
+                     <div class="col-md-12">
+                        <div class="form-group">
+                            <%= form.label :avatar, "Photo de profil" %>
+                            <%= form.file_field :avatar,   placeholder: "Photo de profil" %>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <%= form.label :country, "Pays" %>
+					  	<%= form.collection_select(:country_id,  @countries, :id, :name, {prompt: "Sélectionner le pays"}, style: "width: 100%",  class: "form-control") %>
+                    </div>
+
+                     <div class="form-group">
+                        <%= form.label :locality, "Ville" %>
+					  	<%= form.collection_select(:locality_id,  @localities, :id, :city, {prompt: "Sélectionner une localité"}, style: "width: 100%",  class: "form-control") %>
+                    </div>
+                    
+                    <div class="form-group">
+                        <%= form.label :phone, "Téléphone" %>
+                        <%= form.text_field :phone, class: "form-control",  placeholder: "Téléphone" %>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                    
+                </div>
+            <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group text-right">
+                                <%= form.submit "Enregistrer", class: "btn btn-primary btn-block" %>
+                            </div>
+                        </div>
+                    </div>
+            <% end %>
+
+    </fieldset>

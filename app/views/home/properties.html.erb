@@ -1,0 +1,68 @@
+<div class="featured-properties">
+<div class="container">
+	<div class="section-title">
+		<h1>Toutes les propriétes</h1>
+	</div>
+
+
+	<div class="row">
+
+		<% @properties.each do |e| %>
+
+            <div class="col-md-4 property-item">	
+                <div class="card">
+                    <div class="card-body">
+						<div class="card-thumbnail">
+							<%= image_tag e.thumbnail.url(:large), class: "card-img-top", alt:"Card image cap" %>
+						</div>
+						<div class="card-title">
+							<h5> <%= link_to e.name, property_show_path(e) %>  </h5>                         
+						</div>
+                            
+						<div class="label-wrap label-right hide-on-list">
+							<span class="label-status label-status-7 label label-default">
+								<%= contract_type(e.contract_type_id) %>
+							</span>
+							<span class="label label-default status-<%= e.status_id %>">
+								<%= status(e.status_id) %>
+							</span>                    
+						</div>
+						<div class="price">
+							<span class="item-price">
+								<%= number_with_precision(e.price, delimiter: " ", separator: "", precision: 0) %>
+							</span>
+
+							<span class="item-unity">
+								/<%= unity_name(e.unity_id) %>
+							</span>
+						</div>	
+						<div class="property-address">
+							<%= e.neighborhood %>, <%= e.city %>
+						</div>
+					   
+						<div class="item-foot">
+							<div class="item-foot-left">
+								<p class="prop-user-agent">
+									<i class="fa fa-user"></i> 
+									<%= user_company(e.user_id) %>
+								</p>
+							</div>
+							<div class="item-foot-right">
+								<p class="prop-date">
+								<i class="fa fa-calendar"></i>
+								<%= time_ago_in_words(e.created_at) %>
+								</p>
+							</div>
+						</div>	
+                    </div>
+                </div>	
+			</div>
+		<% end %> 
+	</div>
+
+	<div class="row load-more">
+		<%= will_paginate @properties, previous_label: "Précédent",next_label: "Suivant",  renderer: BootstrapPagination::Rails, class: "pagination load-more-button" %> 
+	</div>
+
+</div>
+</div>

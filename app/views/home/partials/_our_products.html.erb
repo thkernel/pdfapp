@@ -1,0 +1,35 @@
+<section id="features">
+    <div class="container">
+        <div class="heading-text heading-section text-center">
+            <h3>Nos produits</h3>
+        </div>
+        <div class="row">
+            <% @products.each do |product| %>
+               
+                <div class="col-md-4 text-center">
+                    <div class="products">
+                        <div class="card">
+                            <div class="card-body">
+                                <%= link_to product_path(product.id) do %>
+                                    <div class="icon-box effect medium square color">
+                                        <div class="product-icon"> 
+                                            <%= post_thumbnail(product) %>
+                                        </div>
+                                        <h3 class="card-title"><%= product.name %></h3>
+                                        <p class="">
+                                            <%= product.description.truncate_words(15, omission: '...').html_safe %>
+                                        </p>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            <% end %>
+ 
+            
+        </div>
+       
+    </div>
+</section>

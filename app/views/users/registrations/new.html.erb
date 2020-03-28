@@ -1,0 +1,126 @@
+<div class="register-box">
+  <div class="register-logo">
+
+    <%= render 'components/logo/logo' %>
+  </div>
+ <div class="box box-primary">
+  <div class="box-body">
+    <p class="login-box-msg text-center"><h4>Inscrivez-vous comme patient!</h4></p>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+      <!-- Profile infos -->
+      <%= f.fields_for :profile do |p| %>
+        
+
+        <div class="row">
+          <div class="col-md-12">
+              <%= p.hidden_field :profile_type, value: "Patient",  class: "form-control" , required: true %>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= p.label :first_name, "Prénom", class: "required" %>
+              <%= p.text_field :first_name, class: "form-control" , placeholder: "Prénom", required: true %>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= p.label :last_name, "Nom", class: "required" %>
+              <%= p.text_field :last_name, class: "form-control" , placeholder: "Nom", required: true %>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+          <!--
+            <div class="form-group user-speciality">
+                <%= p.label :speciality, "Spécialité" %>
+                <%= p.collection_select :speciality, @specialities, :name, :name, {prompt: "Sélectionner"}, class: "form-control" , style: "width: 100%" %> 
+
+            </div>
+            -->
+
+            <div class="form-group">
+              <%= p.label :phone, "Téléphone", class: "required" %>
+              <%= p.text_field :phone, class: "form-control" , placeholder: "Téléphone", required: true %>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+                <%= p.label :country, "Pays", class: "required" %>
+                <%= p.collection_select :country_id, @countries, :id, :name, {prompt: "Sélectionner"}, class: "form-control" , style: "width: 100%", required: true %> 
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+                <%= p.label :locality, "Localité", class: "required" %>
+                <%= p.collection_select :locality_id, @localities, :id, :city, {prompt: "Sélectionner"}, class: "form-control" , style: "width: 100%", required: true %> 
+            </div>
+          </div>
+        </div>
+
+  <% end %>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <%= f.label :email, class: "required" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control",  placeholder: "E-mail" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :password, class: "required" %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control",  placeholder: "Mot de passe" %>
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :password_confirmation, "Confirmation", class: "required" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control",  placeholder: "Confirmation" %>
+        </div>
+      </div>
+      
+    </div>
+  
+  
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          
+            En vous inscrivant, vous acceptez les <%= link_to "conditions d'utilisations", root_path %> de la plateforme.
+        </div>
+        
+
+        <div class="form-group">
+          <%= f.submit "S'inscrire", class: "btn btn-primary btn-block" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+
+  </div>
+              
+	<div class="o-line">
+        <div class="mg-t-10 tx-center">
+			Déjà un compte? <%= link_to "Se connecter", new_user_session_path(), class: "tx-info" %>
+		</div>
+
+	</div>
+   
+
+</div>

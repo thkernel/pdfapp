@@ -1,0 +1,26 @@
+<div class="container main-container">
+    <div class="card">
+
+        <div class="post-thumbnails">
+            <%= post_thumbnail(@post) %>
+
+        </div>
+        <div class="card-body">
+
+            <div class="post-title">
+                <h1><%= @post.title %></h1>
+            </div>
+            <div class="post-content">
+                <%= @post.content.html_safe %>
+            </div>
+            <div class="order mb-20">
+                <% if  @post.post_category_id == 1 %>
+                    <%= link_to "Commander le produit", new_order_product_path, class: "btn btn-primary"%>
+                <% end %>
+            </div>
+            <div class="social-share">
+                <%= social_share_button_tag(@post.title) %>
+            </div>
+        </div>
+    </div>
+</div>

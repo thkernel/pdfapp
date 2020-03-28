@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Post Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @post_types.each do |post_type| %>
+      <tr>
+        <td><%= post_type.name %></td>
+        <td><%= post_type.description %></td>
+        <td><%= post_type.status %></td>
+        <td><%= post_type.user %></td>
+        <td><%= link_to 'Show', post_type %></td>
+        <td><%= link_to 'Edit', edit_post_type_path(post_type) %></td>
+        <td><%= link_to 'Destroy', post_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post Type', new_post_type_path %>

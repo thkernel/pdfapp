@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= "#{APPLICATION_NAME} - Tableau de bord " %></title>	
+    	<%= csrf_meta_tags %>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag Ckeditor.cdn_url %>
+		<%= render 'layouts/partials/google_analytics' %>
+
+	</head>
+
+  <body >
+		
+		<%= render :partial => 'layouts/partials/flash_messages', :flash => flash %>
+		<!-- Left Sidebar -->
+			<%= render('layouts/partials/dashboard/header') %>
+
+		<!-- End Left sidebar -->
+			<%= render('layouts/partials/dashboard/sidebar') %>
+
+			<div class="br-mainpanel">
+						<% if uncomplete_profile? %>
+
+							<%= render('layouts/partials/uncomplete_profile_alert') %>
+						<% end %>
+
+					<%= yield %>
+				  
+
+			</div>
+
+			<div class="errors_wrapper"></div>
+
+	
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= "#{APPLICATION_NAME} - #{devise_title(controller_name)}" %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/partials/google_analytics' %>
+
+  </head>
+
+  <body>
+  	<div class="page-wrapper">
+
+			<%= render :partial => 'layouts/partials/flash_messages', :flash => flash %>
+			<%= yield %>
+	</div>
+  </body>
+</html>

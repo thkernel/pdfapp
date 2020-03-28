@@ -1,0 +1,99 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ * require_self
+ */
+//@import "bootstrap";
+@import "font-awesome";
+@import "toastr";
+@import "style";
+@import "foreign";
+@import "scss/bracket.min";
+@import "scss/perfect-scrollbar.min";
+@import "lib/datatables.net-dt/css/jquery.dataTables.min";
+@import "lib/datatables.net-responsive-dt/css/responsive.dataTables.min";
+@import "lib/select2/css/select2.min";
+@import "lib/select2/css/select2-bootstrap.min";
+@import "social-share-button";
+@import "slick-carousel";
+@import "error";
+@import "mobile";
+@import "select2-bootstrap-form-control";
+@import "dual-listbox";
+
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('assets/glyphicons-halflings-regular.eot');
+    src: url('assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    url('assets/glyphicons-halflings-regular.woff') format('woff'),
+    url('assets/glyphicons-halflings-regular.ttf') format('truetype'),
+    url('assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  }
+.page-wrapper {
+
+    height: auto;
+    min-height: 100%;
+    background-color: #F0F0F0;
+
+}
+
+.login-box, .register-box {
+    width: 360px;
+    margin: 7% auto;
+        margin-top: 7%;
+        margin-right: auto;
+        margin-left: auto;
+}
+.login-box, .register-box {
+    max-width: 450px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 40px !important;
+}
+
+.login-logo, .register-logo {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.box {
+
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 0px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+
+}
+
+.box-body {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 10px;
+}
+.box-body, .box-header {
+    padding: 20px !important;
+}
+
+.login-box-msg, .register-box-msg {
+    margin: 0;
+    text-align: center;
+    padding: 0 20px 20px 20px;
+}

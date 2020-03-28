@@ -1,0 +1,10 @@
+<% if current_user.role == "superuser" %>
+		<!-- render "dashboard/partials/superuser-dashboard" -->
+	<% elsif current_user.role == "customer" %>
+		<%= render "dashboard/partials/customer-dashboard" %>
+	<% else %>
+
+<% end %>
+
+
+

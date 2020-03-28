@@ -1,0 +1,18 @@
+<%= form_with(model: post_category, local: false) do |form| %>
+   <div class="modal-body">
+		<ul class="errors">
+    	</ul>
+
+      <div class="form-group">
+        <%= form.label :name, "Nom" %>
+        <%= form.text_field :name, class: "form-control", placeholder: "Nom" %>
+      </div>
+
+  
+
+  </div><!-- modal body -->
+  <div class="modal-footer">
+    <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>

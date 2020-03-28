@@ -1,0 +1,146 @@
+<div class="row">
+    <!-- Profile sidebar -->
+    <div class="col-md-3">
+        <div class="card mb-15">
+            <div class="card-header">
+                <div class="pull-left">
+                    <strong>Informations</strong>
+                </div>  
+                <div class="pull-right">
+                    
+                </div>
+            </div>
+    
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table>
+                            <tbody>
+                                
+                                <tr>
+                                    <td class="table-td-title">Spécialité:</td><td class="table-td-value"><%= @provider.profile.speciality %></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td class="table-td-title">Habite à:</td class="table-td-value"><td><%= "#{locality(@provider.profile.locality_id).city} " %></td>
+                                </tr>
+                            
+                            <!--
+                                <tr>
+                                    <td class="table-td-title">Email:</td><td class="table-td-value"> <%= @provider.email %></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table-td-title">Téléphone:</td><td class="table-td-value"> <%= @provider.profile.phone %></td>
+                                </tr>
+                            -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Lieux de travail -->
+            <div class="card mb-15">
+                <div class="card-header">
+                    <div class="pull-left">
+                        <strong>Prix de consultation</strong>
+                    </div>
+                    <div class="pull-right">
+                        
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <% @structures.each do |structure| %>
+                                <!-- link_to "#{structure(structure.structure_id).name} (#{structure(structure.structure_id).consultation_price} F CFA)", structure_path(structure.structure_id), class: "btn btn-warning" %> -->
+                                <span class="workplace_and_price">
+                                    <%= structure.name %>
+                                    <%= "(#{WorkPlaceItem.find_by(structure_id: structure.id).consultation_price} F CFA)"%>
+                                </span>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+
+    <!-- Profile content -->
+        <div class="col-md-9">
+
+            <!--  About -->
+            <div class="card mb-15">
+                <div class="card-header">
+                    <div class="pull-left">
+                        <strong> A propos</strong>
+                    </div>
+                <div class="pull-right">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+
+             <!-- Lieux de travail -->
+            <div class="card mb-15">
+                <div class="card-header">
+                    <div class="pull-left">
+                        <strong>Disponibilité du médecin</strong>
+                    </div>
+                    <div class="pull-right">
+                        
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- <h3>Lieux de travail</h3> -->
+                        </div>
+                    </div>
+
+                    <% @structures.each_with_index do |structure, i| %>
+                        <hr/>
+                        <h5><%= "Lieu #{i+1}: #{structure.name}" %></h5>
+
+                        <%= render partial: "profiles/partials/planning", locals: {structure_id: structure.id} %>
+
+                    <% end %>
+
+
+
+                </div>
+            </div>
+
+        </div>
+</div>
+
+<script>
+$(document).on('turbolinks:load', function(){
+
+  $("#structure_id").change(function() {
+    $.ajax({
+        headers: {
+                'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
+                },
+      url: "<%= filter_doctor_plannings_path %>",
+      dataType: "script",
+      data:{ data: $('#structure_id option:selected').val()}
+    });
+      
+});
+});
+  
+</script>
+

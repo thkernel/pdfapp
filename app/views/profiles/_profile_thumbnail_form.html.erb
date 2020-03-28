@@ -1,0 +1,22 @@
+<%= form_with(model: profile, url: update_profile_thumbnail_path, local: true) do |form| %>
+  
+  
+  <div class="modal-body">
+    <ul class="errors">
+    </ul>
+
+   
+    
+    <div class="form-group">
+       
+        <%= form.file_field :avatar,   id: "profile-image-upload", required: true %>
+    </div>
+    
+                    
+
+    </div><!-- modal body -->
+  <div class="modal-footer">
+    <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+    <%= form.submit  "Modifier", class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>

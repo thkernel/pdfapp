@@ -1,0 +1,112 @@
+<% if @medicaments.blank? && @analyses.blank? %>
+    <div class="container main-container">
+        <div class="card">
+            <div class="card-body text-center">
+                <p>
+                    <h5>Aucun résulat pour cette recherche!</h5>
+                </p>
+            </div>
+        </div>
+    </div>
+<% elsif @medicaments.present? %>
+
+    
+    <div class="container main-container">
+        <div class="card">
+           
+            <div class="card-body">
+              
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-bordered">
+                           <thead>
+                                <tr>
+                                    <th>
+                                        Nom
+                                    </th>
+                                    <th>
+                                        Prix
+                                    </th>
+                                   
+                                    <th>
+                                        Structure
+                                    </th>
+                                </tr>
+                           </thead>
+                            <tbody>
+                                
+                                <% @medicaments.each do |medicament| %>
+                                    <tr>
+                                        <td><%= medicament.name %></td>
+                                        <td><%= medicament.price %></td>
+                                        <td><%= link_to structure(medicament.structure_id).name, structure_path(medicament.structure_id) %></td>
+                                        <td><%= link_to "Commander", new_medicament_order_path(medicament_id: medicament.id), class: "btn btn-success btn-block" %></td>
+                                    </tr>
+                                <% end %>
+                                
+                            </tbody>
+                        </table>    
+                    </div>
+                </div>
+                <div class="row page-navi">
+                    
+                    <%= will_paginate @medicaments, previous_label: "Précédent", next_label: "Suivant",  renderer: BootstrapPagination::Rails %> 
+                
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <% elsif @analyses.present? %>
+
+        <div class="container main-container">
+            <div class="card">
+            
+                <div class="card-body">
+                
+                    <div class="row">
+                    
+                       <div class="col-md-12">
+
+                        <table class="table table-bordered">
+                           <thead>
+                                <tr>
+                                    <th>
+                                        Nom
+                                    </th>
+                                    <th>
+                                        Prix
+                                    </th>
+                                    <th>
+                                        Délai
+                                    </th>
+                                    <th>
+                                        Structure
+                                    </th>
+                                </tr>
+                           </thead>
+                            <tbody>
+                                
+                                <% @analyses.each do |analysis| %>
+                                    <tr>
+                                        <td><%= analysis.name  %></td>
+                                        <td><%= analysis.normal_price %></td>
+                                        <td><%= analysis.delay %></td>
+                                        <td><%= link_to structure(analysis.structure_id).name, structure_path(analysis.structure_id) %></td>
+                                    </tr>
+                                <% end %>
+                                
+                            </tbody>
+                        </table>    
+                    </div>
+                    <div class="row page-navi">
+                        
+                        <%= will_paginate @analyses, previous_label: "Précédent", next_label: "Suivant",  renderer: BootstrapPagination::Rails %> 
+                    
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    <% end %>
+    </div>

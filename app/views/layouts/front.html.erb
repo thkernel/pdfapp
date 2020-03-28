@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= APPLICATION_NAME %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag Ckeditor.cdn_url %>
+   
+
+
+  </head>
+
+  <body class="o-page">
+  		<%= render :partial => 'layouts/partials/flash_messages', :flash => flash %>
+
+    <%= render("layouts/partials/home/header") %>
+    <%= yield %>
+    <%= render("layouts/partials/home/footer") %>
+  </body>
+</html>

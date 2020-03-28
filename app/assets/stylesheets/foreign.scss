@@ -1,0 +1,42 @@
+.home-bubbles {
+    padding: 5px 0 40px 0;
+    background: #ffdf9c;
+}
+
+.home-bubbles h2 {
+    margin-bottom: 30px;
+}
+.home-bubbles .col-md-3 {
+    text-align: center;
+}
+.home-bubbles .icon .fa {
+    background: #ffefcf;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+}
+.fa-3x {
+    font-size: 3em !important;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+        font-size: 14px;
+        line-height: 1;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
+
+.home-bubbles h3 {
+    margin-bottom: 10px;
+}
+
+small, .small {
+    font-size: 85%;
+}
