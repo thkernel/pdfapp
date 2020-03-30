@@ -35,7 +35,9 @@ Rails.application.routes.draw do
   resources :permissions do 
     get "delete"
   end
-  resources :roles
+  resources :roles do 
+    get "delete"
+  end
 
 
   get "/dashboard" => "dashboard#index" , as: :dashboard

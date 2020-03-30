@@ -7,11 +7,9 @@ class CustomUsersController < ApplicationController
 
     
 		def new
-			@countries = Country.all
-			@localities = Locality.all
+			
 			@user = User.new
-			@user.build_profile
-			#@roles = Role.where.not(name: "superuser")
+			
 			@roles = Role.all
 		
 
@@ -20,9 +18,9 @@ class CustomUsersController < ApplicationController
 
 		# GET /users/1/edit
 		def edit
-			@services = Service.all
+			
 			@roles = Role.where.not(name: "superuser")
-			@user.profile || @user.build_profile 
+			
 
 		end
 
@@ -230,7 +228,7 @@ class CustomUsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:login,  :email, :password,:password_confirmation, :role_id,  profile_attributes: [:first_name, :last_name, :civility, :country_id, :locality_id,  :phone])
+      params.require(:user).permit(:login,  :email, :password,:password_confirmation, :role_id)
     end
 
 end

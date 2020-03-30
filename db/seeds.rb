@@ -39,7 +39,7 @@ end
 unless User.all.present?
     users = User.create([
         {login: "superuser",  email: "superuser@gmail.com",  password: "AMOSXZIBITDE88", password_confirmation: "AMOSXZIBITDE88", role_id: Role.find_by(name: "superuser").id},
-        {login: "demo", email: "demo@gmail.com", password: "Root@2019#!", password_confirmation: "Root@2019#!*", role_id: Role.find_by(name: "superuser").id},
+        {login: "demo", email: "demo@gmail.com", password: "Root@2019#!*", password_confirmation: "Root@2019#!*", role_id: Role.find_by(name: "superuser").id},
 
 
     
