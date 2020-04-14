@@ -1,12 +1,12 @@
 <div class="container main-container">
 <h1>Documents</h1>
-
+<hr />
    <div class="row">
 
 <% @posts.each do |post| %>
         <div class="col-md-4">
 
-        <div class="card">
+        <div class="card mb">
             <div class="thumbnails">
                 <%= link_to  show_post_path(post.slug) do  %>
                     <div class="card-img-top">
