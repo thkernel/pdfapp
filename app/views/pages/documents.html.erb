@@ -32,5 +32,15 @@
     
 <% end %>
 </div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="text-center">
+                    
+                    <%= will_paginate @posts, previous_label: "Précédent", next_label: "Suivant",  renderer: BootstrapPagination::Rails %> 
+                 
+                </div>
+            </div>
+        </div>
 </div>
 

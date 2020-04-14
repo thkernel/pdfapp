@@ -33,7 +33,7 @@ module DeviseHelper
         if post.thumbnail.attached?
             image_tag post.thumbnail
         else
-            image_tag 'thumb/post-missing.jpg'
+            image_tag 'posts/post-missing.png'
         end
 	end
 	
