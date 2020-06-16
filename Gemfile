@@ -92,7 +92,7 @@ gem 'cocoon', '~> 1.2', '>= 1.2.12'
 #gem 'ckeditor', '~> 5.0'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'social-share-button', '~> 1.2', '>= 1.2.1'
-gem 'sanitize', '~> 5.1'
+gem 'sanitize', '~> 5.2'
 gem 'creek', '~> 2.2'
 gem 'pg_search', '~> 2.3'
 
