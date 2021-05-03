@@ -11,7 +11,7 @@ set :deploy_to, "/home/ubuntu/apps/rails/pcagire/pcagire.prod"   # the path to y
 set :rails_env, "production"
 
 #server "51.38.235.131", user: "root", roles: %w{app db web}, ssh_options: {forward_agent: true}
-server "3.131.64.130", user: "ubuntu", roles: %w{app db web}, ssh_options: {forward_agent: true}
+server "75.119.154.223", user: "root", roles: %w{app db web}, ssh_options: {forward_agent: true}
 
 set :branch, "master"
 set :port, 3028 #28-03-2020
