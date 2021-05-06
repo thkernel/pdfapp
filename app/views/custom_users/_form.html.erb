@@ -27,7 +27,7 @@
 		<div class="row">
 			<div class="form-group col-md-12 customSelect">
                             <%= form.label "Profil" %>
-                            <%= form.collection_select(:role_id, @roles,  :id, :name , {prompt: "Sélectionner un profil"}, class: "form-control", required: true) %>
+                            <%= form.collection_select(:role_id, @roles,  :id, :name , {prompt: "Sélectionner un profil"}, class: "form-control", style: "width:100%", required: true) %>
                                                     
                         </div>
 		</div>
